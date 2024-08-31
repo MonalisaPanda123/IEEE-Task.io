@@ -1,0 +1,144 @@
+1)What is the difference between em and rem units in CSS?
+ans-em is a CSS unit that scales relative to the parent element's font size, 
+meaning its value can compound with nested elements. This can lead to varying sizes in different contexts.
+Rem is always relative to the root element's font size, ensuring consistent sizing throughout the entire document.
+
+2)Explain the concept of closures in JavaScript. Provide an example where a closure might be useful.(With code)
+ans-A closure in JavaScript is a feature where an inner function has access to variables from its outer  function's scope, even after the outer function has finishe
+example of a code-
+function createcounter() {
+    let count = 0;
+    return function() { 
+        count++; 
+        return count;
+    };
+}
+const counter = createcounter(); 
+console.log(counter()); 
+console.log(counter()); 
+console.log(counter());
+
+3)What are semantic HTML tags?
+ans-<header>: Represents the introductory content or a group of navigation links.
+<nav>: Defines a block of navigation links.
+<main>: Indicates the main content of the document.
+<article>: Represents a self-contained piece of content that can be independently distributed or reusedblog post.
+<section>: Defines a section in a document, often with a heading.
+<aside>: Represents content that is tangentially related to the main content, like a sidebar.
+<footer>: Defines the footer of a document or section, typically containing metadata or links related to the content.
+
+4)How would you create a responsive design without using a CSS framework like Bootstrap?(WRITE THE CODE)
+ans-creating a responsive design without using a CSS framework like Bootstrap can be achieved using media queries, flexible layouts, and relative units like percentages and em/rem. Here's a simple example demonstrating how to  a responsive layout:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Responsive Website</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Welcome</h2>
+            <p>This is a simple responsive design without a CSS framework.</p>
+        </section>
+        <aside>
+            <h3>Sidebar</h3>
+            <p>This is the sidebar content.</p>
+        </aside>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Responsive Website</p>
+    </footer>
+</body>
+</html>
+CSS :
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header, nav, main, footer {
+    padding: 20px;
+    text-align: center;
+}
+header {
+    background-color: #4CAF50;
+    color: white;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+section {
+    flex: 2 1 60%; 
+    margin-bottom: 20px;
+}
+aside {
+    flex: 1 1 30%; 
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    main {
+        flex-direction: column;
+    }
+    section, aside {
+        flex: 1 1 100%; 
+    }
+}
+@media (max-width: 480px) {
+    header, footer {
+        padding: 10px;
+    }
+
+    nav ul li {
+        font-size: 14px;
+    }
+    section, aside {
+        padding: 10px;
+    }
+}
+
+5)What is the purpose of the srcset attribute in the <img> tag?
+ans-The srcset attribute in the <img> tag is used to provide multiple versions of an image for different device display conditions,
+such as varying screen resolutions, sizes, and pixel densities.
+The browser can then choose the most appropriate image to load based on the user's device and display capabilities, 
+optimizing performance and visual quality

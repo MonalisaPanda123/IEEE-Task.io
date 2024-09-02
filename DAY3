@@ -1,0 +1,105 @@
+1)Write a function that checks if a given number is a perfect number. A perfect number is equal to the sum of its proper divisors (excluding itself).
+
+#include<iostream>
+ using namespace std;
+ bool perfect(int n){
+ int sum=0;
+     for(int i=1;i<n;i++){
+         if(n%i==0){
+             sum=sum+i;
+        }
+     }
+    if(n==sum) return true;
+     else return false;
+ }
+ int main(){
+     int n;
+     cout<<"enter a number:";
+     cin>>n;
+    cout<<perfect(n);
+     return 0;
+ }
+
+2)Write a function that checks if a given integer is a palindrome. A palindrome number remains the same when its digits are reversed.
+
+ #include<iostream>
+ using namespace std;
+ bool pallindrome(int n){
+    int r,sum=0;
+    int temp=n;
+    while(n!=0){
+        r=n%10;
+        sum=sum+r*10;
+        n=n/10;
+    }
+    if(sum==temp){
+        return true;
+    }
+    else {
+        return false;}
+ }
+ int main(){
+  int n;
+     cout<<"enter a number:";
+     cin>>n;
+    cout<<pallindrome(n);
+    return 0;
+ }
+
+3)Write a function that counts the number of vowels (a, e, i, o, u) in a given string.
+ #include<iostream>
+ #include<cstring>
+ using namespace std;
+ void vowel(char s[]){
+    int count=o;
+    int n=strlen(s);
+    for(int i=0;i<n;i++){
+        if(s[i]==97||s[i]==101||s[i]==105||s[i]==111||s[i]==117){
+            count++;
+        }
+    }
+    cout<<count;
+ }
+ int main(){
+    char str[]=“Hello, World!”;
+    vowel(str);
+    return 0;
+ }
+
+4)Write a function that reverses a given list of integers.
+  #include<iostream>
+  using namespace std;
+  int main(){
+    int n;
+    cout<<"enter size:";
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+ int brr[n];
+ for(int i=0;i<n;i++){
+  brr[i]==arr[n-i-1];
+ }
+  for(int i=0;i<n;i++){
+ cout<<brr[i];
+ }
+ 
+    return 0;
+  }
+
+5)Write a function that calculates the factorial of a non-negative integer.
+  #include<iostream>
+  using namespace std;
+  int main(){
+    int n;
+    cout<<"enter a number:";
+    cin>>n;
+    int f=1;
+    for(int i=1;i<=n;i++){
+       f=f*i;
+    }
+    cout<<f;
+ 
+    return 0;
+  }

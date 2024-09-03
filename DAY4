@@ -1,0 +1,109 @@
+1.Armstrong Number Checker: Write a function that checks if a given number is an Armstrong number. An Armstrong number of n digits is equal to the sum of its digits each raised to the power of n.
+#include<iostream>
+#include<math.h>
+using namespace std;
+bool arm(int n){
+    int r,sum=0,c=0;
+    int temp=n;
+    while(n!=0){
+     n=n/10;
+     c++;
+    }
+    while(n!=0){
+        r=n%10;
+        sum=sum+pow(r,c);
+        n=n/10;
+    }
+   if(temp==sum) return true;
+     else return false;
+}
+int main(){
+    int n;
+    cout<<"enter a umber:";
+    cin>>n;
+   cout<<arm(n);
+return 0;
+}
+
+2.Anagram Checker: Write a function that checks if two given strings are anagrams. Two strings are anagrams if they contain the same characters in the same frequency.
+#include <bits/stdc++.h>
+using namespace std;
+
+bool checkAnagrams(string s1, string s2)
+{
+ int size1 = s1.length();
+ int size2 = s2.length();
+ if (size1 != size2)
+ {
+ return false;
+ }
+ sort(s1.begin(), s1.end());
+ sort(s2.begin(), s2.end());
+ for (int i = 0; i < size1; i++)
+ {
+ if (s1[i] != s2[i])
+ {
+ return false;
+ }
+}
+return true;
+}
+int main(){
+     string s1 = "listen";
+     string s2 = "silent";
+ cout<< checkAnagrams(s1, s2);
+}
+
+3.Sum of Even Numbers in a List: Write a function that calculates the sum of all even numbers in a given list of integers.
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cout<<"enter the size of the integer function:";
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        cin>>i;
+    }
+    int sum=0;
+    for(int i=1;i<n;i++){
+        if(i%2==0) {
+            sum=sum+i;
+        }
+    }
+    cout<<sum;
+    return 0;
+}
+
+4.Calculate the GCD (Greatest Common Divisor) of Two Numbers: Write a function that calculates the GCD of two non-negative integers.
+#include<iostream>
+#include<math.h>
+using namespace std;
+void cal(int n1,int n2){
+    int m=min(n1,n2);
+    for(int i=m;i>=1;i--){
+     if(n1%i==0 && n2%i==0){
+        cout<<i;
+        break;
+     }
+    }
+}
+int main(){
+   int n1,n2;
+   cout<<"enter two number:";
+   cin>>n1>>n2; 
+   cal(n1,n2);
+}
+
+5.Convert Celsius to Fahrenheit: Write a function that converts a temperature from Celsius to Fahrenheit.
+#include<iostream>
+using namespace std;
+void celciusToFah(int c){
+    int f=(c*9)/5+32;
+      cout<<f;
+}
+int main(){
+    int cel;
+    cout<<"enter temperature in celcius:";
+    cin>>cel;
+    celciusToFah(cel);
+}
